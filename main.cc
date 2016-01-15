@@ -31,7 +31,7 @@ int main(int argc,char **argv)
   Mail box;
   box.setWindowTitle("SMUI");
   box.setFixedSize(WIDTH,HEIGHT);
- 
+  box.setApiKey("api:key-3ax6xnjp29jd6fds4gc373sgvjxteol0");
   box.setWindowIcon(*new QIcon(*new QPixmap(":/res/email.png")));
   box.move((desktop->width()-WIDTH)/2,(desktop->height()-HEIGHT)/2);
   box.show();

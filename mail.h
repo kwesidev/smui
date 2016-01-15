@@ -18,6 +18,7 @@
  */
 #ifndef MAIL_H
 #define MAIL_H
+#include <QDebug>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QLabel>
@@ -26,6 +27,13 @@
 #include <QTextEdit>
 #include <QIcon>
 #include <QPixmap>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QMessageBox>
 
 class Mail : public QWidget
@@ -41,14 +49,16 @@ class Mail : public QWidget
 
   private:
     QPushButton *send;
-    QLineEdit *fname;
-    QLineEdit *email;
+    QLineEdit *from;
+    QLineEdit *toemail;
     QTextEdit *message;
+    QLineEdit *subject;
     QString api_key;
     QString domain_key;
-
+    QNetworkAccessManager * manager;
   private slots:
     void sendMail();
+    void replyFinished(QNetworkReply *reply);
 
 };
 
